@@ -1,0 +1,198 @@
+
+:root{
+    --color-primary: #6f6af8;
+    --color-primary-light: hsl(242,91%, 69%, 18%);
+    --color-primary-variant: #5854c7;
+    --color-red: #da0f3f;
+    --color-red-light: hsl(346, 87%, 46%, 15%);
+    --color-gray-900: #1e1e66;
+    --color-gray-700: #2d2b7c;
+    --color-gray-300: rgb(242, 242, 254, 0.3);
+    --color-gray-200: rgb(242, 242, 254, 0.7);
+    --color-white: #f2f2fe;
+    --color-bg: #0f0f3e;
+    --color-green-light: hsl(120, 26%, 60%);
+    --color-green: #143814c3;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    padding: 1%;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/* CSS FOR MANAGE-ADMIN */
+.tbl_full{
+width: 80%;
+}
+
+table tr th{
+    border-bottom: 2px solid black;
+    padding: 2%;
+    text-align: left;
+}
+
+.btn-primary{
+    background: var(--color-primary-variant);
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.2rem;
+    border: 0px none;
+}
+
+.btn-primary:hover{
+   background-color: #30020c;
+}
+
+.btn-secondary{
+    background: var(--color-primary-variant);
+    padding: 3%;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.2rem;
+    border: 0px none;
+}
+
+.btn-secondary:hover{
+   background-color: #30020c;
+}
+
+.btn-danger{
+    background: red;
+    padding: 3%;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.2rem;
+    border: 0px none;
+}
+
+.btn-danger:hover{
+   background-color: #520717;
+}
+
+table tr td{
+    padding: 2%;
+}
+
+/* CSS MENU */
+
+.menu{
+    background: var(--color-bg) ;
+}
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-white)
+}
+
+.menu ul li a:hover{
+    cursor: pointer;
+    color: black;
+}
+
+/* CSS FOR MAIN CONTENT*/
+
+.main-content{
+    background: rgb(225, 218, 218);
+     padding: 2% 0;
+}
+
+.col-4{
+    width: 20%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+/* CSS FOOTER */
+.footer{
+    background:#2d2b7c;
+    color: white;
+} 
+
+/* CSS FOR ADD-ADMIN */
+  .form-container {
+      background: #fff;
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .form-group input {
+      width: 90%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #667eea;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #5a67d8;
+    }
