@@ -13,6 +13,14 @@
     --color-bg: #0f0f3e;
     --color-green-light: hsl(120, 26%, 60%);
     --color-green: #143814c3;
+
+
+    --card-border-radius-2: 0.5rem;
+    --color-green-light: hsl(120, 26%, 60%);
+    --color-green: #143814c3;
+    --color-red: #da0f3f;
+    --color-red-light: hsl(346, 87%, 46%, 15%);
+
 }
 
 
@@ -87,6 +95,23 @@ table tr th{
 .btn-danger:hover{
    background-color: #520717;
 }
+
+
+.alert-message.success{
+      padding: 0.8rem 1.4rem;
+      margin-bottom: 1rem;
+      border-radius: var(--card-border-radius-2 );
+  }
+
+ .alert-message .error{
+      background: var(--color-red-light);
+      color: var(--color-red);
+ }
+     
+ .alert-message .success{
+      background: var(--color-green-light);
+      color: var(--color-green);
+ }
 
 table tr td{
     padding: 2%;

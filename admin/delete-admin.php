@@ -14,13 +14,13 @@ $get_result = mysqli_query($connection, $delete);
 if($get_result==TRUE){
 
     //create session variable to display the message
-    $_SESSION['delete'] = 'Admin deleted successfully';
+    $_SESSION['delete'] = "<div class='alert-message success'>Admin deleted successfully.</div>";
 
     //redirect to manage admin page
     header('location:'  . ROOT_URL . 'admin/manage-admin.php');
 }else{
 
-    $_SESSION['delete'] = 'fail to delete admin, try again';
+    $_SESSION['delete'] = "<div class='alert-message error'>fail to delete admin, try again.</div>";
      header('location:'  . ROOT_URL . 'admin/manage-admin.php');
      //go back to manage session and add the display message
 }
