@@ -21,6 +21,16 @@ use Dom\Mysql;
             <br/><br/>
         <?php endif ?>
 
+        <?php if(isset($_SESSION['delete'])) : ?>
+
+          <?= 
+            $_SESSION['delete'];
+            unset($_SESSION['delete']);
+            ?>
+            <br/><br/>
+        <?php endif ?>
+
+
         
         <a class="btn-primary" href="add-admin.php">Add Admin</a>
 
@@ -69,7 +79,7 @@ use Dom\Mysql;
             <td><?= $username; ?></td>
             <td>
               <a class="btn-secondary" href="">Update Admin</a>
-              <a class="btn-danger" href="">Delete Admin</a>
+              <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-admin.php ?id=<?= $id ?>">Delete Admin</a>
             </td>
           </tr>
 
