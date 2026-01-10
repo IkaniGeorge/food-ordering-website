@@ -25,9 +25,6 @@ include 'partials/menu.php';
       <br/><br/>
     <?php endif ?>
 
-
-
-
     <?php if (isset($_SESSION['delete'])) : ?>
       <div class="alert-message error">
         <p>
@@ -41,7 +38,18 @@ include 'partials/menu.php';
       <br/><br/>
     <?php endif ?>
 
+    <?php if (isset($_SESSION['update'])) : ?>
+      <div class="alert-message error">
+        <p>
+          <?=
+          $_SESSION['update'];
+          unset($_SESSION['update']);
+          ?>
+        </p>
+      </div>
 
+      <br/><br/>
+    <?php endif ?>
 
     <a class="btn-primary" href="add-admin.php">Add Admin</a>
 
@@ -57,7 +65,7 @@ include 'partials/menu.php';
 
       <?php
 
-      //Querry to get from admin
+      //Querry to get from add-admin
       $insert_into_db = "SELECT * FROM tbl_admin";
       //execute the querry
       $insert_result = mysqli_query($connection, $insert_into_db);
@@ -89,7 +97,8 @@ include 'partials/menu.php';
               <td><?= $full_name;  ?></td>
               <td><?= $username; ?></td>
               <td>
-                <a class="btn-secondary" href="">Update Admin</a>
+                <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-password.php ?id=<?= $id ?>">Change Password</a>
+                <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-admin.php ?id=<?= $id ?>">Update Admin</a>
                 <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-admin.php ?id=<?= $id ?>">Delete Admin</a>
               </td>
             </tr>
