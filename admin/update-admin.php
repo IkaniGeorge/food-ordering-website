@@ -68,7 +68,7 @@
 </div>
 
 <?php 
-//Updating the user
+//Updating
 
 if(isset($_POST['submit'])){
 

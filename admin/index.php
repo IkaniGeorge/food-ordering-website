@@ -9,26 +9,21 @@ include 'partials/menu.php';
         <h1>Dashboard</h1>
 
         <div class="col-4 text-center">
-            <h1>5</h1> Categories
+            <h1>1</h1> Categories
         </div>
 
         <div class="col-4 text-center">
-            <h1>5</h1> Categories
+            <h1>2</h1> Categories
         </div>
 
         <div class="col-4 text-center">
-            <h1>5</h1> Categories
+            <h1>3</h1> Categories
         </div>
 
         <div class="col-4 text-center">
-            <h1>5</h1> Categories
+            <h1>4</h1> Categories
         </div>
-        <div class="col-4 text-center">
-            <h1>5</h1> Categories
-        </div>
-        <div class="col-4 text-center">
-            <h1>5</h1> Categories
-        </div>
+    
 
         <div class="clearfix"></div>
     </div>

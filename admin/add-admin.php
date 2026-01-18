@@ -5,16 +5,9 @@ include 'partials/menu.php';
 <div class="main-content">
   <div class="wrapper">
     <h1>Add Admin</h1>
-    <br />
+    <br /><br />
 
-    <?php if (isset($_SESSION['add'])) : ?>
 
-      <?=
-      $_SESSION['add']; //display session message if set
-      unset($_SESSION['add']); // remove session message
-      ?>
-      <br /><br />
-    <?php endif ?>
     <form class="form-container" method="POST">
 
       <div class="form-group">
@@ -58,12 +51,12 @@ if (isset($_POST['submit'])) {
   if ($insert_result == TRUE) {
 
     //Create session variable to display message
-    $_SESSION['add'] = "Admin added successfully";
+    $_SESSION['add'] = "<div class='alert-message success'>Admin added successfully.</div>";
     header("location:" . ROOT_URL . 'admin/manage-admin.php');
     //die();
 
   } else {
-    $_SESSION['add'] = 'Fail to add Admin';
+    $_SESSION['add'] = "<div class='alert-message error'>Fail to add admin</div>";
     header('location:' . ROOT_URL . 'admin/add-admin.php');
     //die();
   }

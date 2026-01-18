@@ -22,11 +22,11 @@ include 'partials/menu.php';
           ?>
         </p>
       </div>
-      <br/><br/>
+      <br /><br />
     <?php endif ?>
 
     <?php if (isset($_SESSION['delete'])) : ?>
-      <div class="alert-message error">
+      <div class="alert-message success">
         <p>
           <?=
           $_SESSION['delete'];
@@ -35,11 +35,11 @@ include 'partials/menu.php';
         </p>
       </div>
 
-      <br/><br/>
+      <br /><br />
     <?php endif ?>
 
     <?php if (isset($_SESSION['update'])) : ?>
-      <div class="alert-message error">
+      <div class="alert-message success">
         <p>
           <?=
           $_SESSION['update'];
@@ -48,7 +48,44 @@ include 'partials/menu.php';
         </p>
       </div>
 
-      <br/><br/>
+      <br /><br />
+    <?php endif ?>
+
+    <?php if (isset($_SESSION['user-not-found'])) : ?>
+      <div class="alert-message error">
+        <p>
+          <?=
+          $_SESSION['user-not-found'];
+          unset($_SESSION['user-not-found']);
+          ?>
+        </p>
+      </div>
+      <br /><br />
+    <?php endif ?>
+
+
+    <?php if (isset($_SESSION['pwd-not-match'])) : ?>
+      <div class="alert-message error">
+        <p>
+          <?=
+          $_SESSION['pwd-not-match'];
+          unset($_SESSION['pwd-not-match']);
+          ?>
+        </p>
+      </div>
+      <br /><br />
+    <?php endif ?>
+
+    <?php if (isset($_SESSION['pwd-match'])) : ?>
+      <div class="alert-message success">
+        <p>
+          <?=
+          $_SESSION['pwd-match'];
+          unset($_SESSION['pwd-match']);
+          ?>
+        </p>
+      </div>
+      <br /><br />
     <?php endif ?>
 
     <a class="btn-primary" href="add-admin.php">Add Admin</a>
@@ -97,9 +134,9 @@ include 'partials/menu.php';
               <td><?= $full_name;  ?></td>
               <td><?= $username; ?></td>
               <td>
-                <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-password.php ?id=<?= $id ?>">Change Password</a>
-                <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-admin.php ?id=<?= $id ?>">Update Admin</a>
-                <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-admin.php ?id=<?= $id ?>">Delete Admin</a>
+                <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-password.php?id=<?= $id ?>">Change Password</a>
+                <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-admin.php?id=<?= $id ?>">Update Admin</a>
+                <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-admin.php?id=<?= $id ?>">Delete Admin</a>
               </td>
             </tr>
 
