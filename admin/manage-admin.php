@@ -90,7 +90,7 @@ include 'partials/menu.php';
 
     <a class="btn-primary" href="add-admin.php">Add Admin</a>
 
-    <br /><br />
+    <br/><br/>
 
     <table class="tbl_full">
       <tr>
@@ -133,10 +133,12 @@ include 'partials/menu.php';
               <td><?= $sn++; ?></td>
               <td><?= $full_name;  ?></td>
               <td><?= $username; ?></td>
-              <td>
-                <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-password.php?id=<?= $id ?>">Change Password</a>
+
+              <td class="actions">
+                <a class="btn-primary" href="<?= ROOT_URL ?>admin/update-password.php?id=<?= $id ?>">Change Password</a>
                 <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-admin.php?id=<?= $id ?>">Update Admin</a>
                 <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-admin.php?id=<?= $id ?>">Delete Admin</a>
+
               </td>
             </tr>
 
