@@ -1,6 +1,8 @@
 <?php 
  include '../config/constant.php';
+ include 'login-check.php';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

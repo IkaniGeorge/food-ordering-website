@@ -131,20 +131,19 @@ table tr th {
 }
 
 
-.alert-message.success.error{
+.alert-message{
       padding: 0.8rem 1.4rem;
-      margin-bottom: 1rem;
       border-radius: var(--card-border-radius-2 );
   }
 
  .alert-message.error{
-      background: var(--color-red-light);
       color: var(--color-red);
+      text-align: center;
  }
      
  .alert-message.success{
-      background: var(--color-green-light);
-      color: var(--color-green);
+      color: var(--color-white);
+      background-color: rgb(10, 58, 10);
  }
 
 table tr td{

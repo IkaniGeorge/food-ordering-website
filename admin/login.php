@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 include '../config/constant.php';
 
@@ -23,6 +23,18 @@ include '../config/constant.php';
                             <?=
                             $_SESSION['login'];
                             unset($_SESSION['login']);
+                            ?>
+                        </p>
+                    </div>
+                    <br /><br />
+                <?php endif ?>
+
+                <?php if (isset($_SESSION['no-login-message'])) : ?>
+                    <div class="">
+                        <p>
+                            <?=
+                            $_SESSION['no-login-message'];
+                            unset($_SESSION['no-login-message']);
                             ?>
                         </p>
                     </div>
@@ -65,6 +77,8 @@ if (isset($_POST['submit'])) {
     $count = mysqli_num_rows($check_sql);
     if ($count == 1) {
         $_SESSION['login'] = "<div class='alert-message success'>Login Succesful</div>";
+        //Setting authorization for only admin
+        $_SESSION['user']=$username; // to check if user is login or not and logout will unset it
         header('location:' . ROOT_URL . 'admin/index.php');
         die();
     } else {
@@ -75,6 +89,4 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-=======
 
->>>>>>> 11f69c59a7a569d8d7610a7ea40d0d26120578a0
