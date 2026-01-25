@@ -7,7 +7,7 @@
         <br /><br />
 
         <?php
-        
+
         if (isset($_SESSION['added']))
 
             echo $_SESSION['added'];
@@ -89,30 +89,33 @@
                 //Upload the image
                 //To upload image we need image name, source path and destination path
                 $image_name = $_FILES['image']['name'];
+
+                //Auto renaming image to avoid naming conflict
+                //Getting image extension like jpg, jpeg, png, heic
+                $extention = end(explode('.', $image_name));
+
+                //Rename the image
+                $image_name = "Food_Category_" . rand(000, 999) . '.' . $extention;
+
                 $source_path = $_FILES['image']['tmp_name'];
                 $destination_path = "../images/category/" . $image_name;
-                    // Make sure file is an image
-                //$allowed_files = ['png', 'jpg', 'jpeg', 'heic'];
-                //$extention = explode('.', $image_name);
-                //$extention = end($extention);
 
-                 $upload = move_uploaded_file($source_path, $destination_path);
+
+                $upload = move_uploaded_file($source_path, $destination_path);
 
                 //check whether the image is uploaded or not
                 //And if the image is not uploaded then we will stop the process
                 //and redirect with error message
-                if ($upload==false) {
+                if ($upload == false) {
 
-                //Finally upload the image
-               //
-                    //
+                    //Finally upload the image
                     $_SESSION['upload'] = "<div class='alert-message error'>Failed to Upload Image</div>";
                     header('location:' . ROOT_URL . 'admin/add-category.php');
                     die();
                 }
-            }else{
-                    //dont upload image and set the image_name value as blank
-                    $image_name="";
+            } else {
+                //dont upload image and set the image_name value as blank
+                $image_name = "";
             }
 
 
