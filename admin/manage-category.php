@@ -9,8 +9,16 @@
 
            <!---- Button to add category--->
         <br/><br/>
+
+           <?php if(isset($_SESSION['added'])) 
+          
+        echo $_SESSION['added'];
+        unset($_SESSION['added']);
+            
+        ?>
+          <br/><br/>
  
-        <a class="btn-primary" href="">Add Category</a>
+        <a class="btn-primary" href="<?= ROOT_URL ?>admin/add-category.php">Add Category</a>
 
         <br/><br/>
 
