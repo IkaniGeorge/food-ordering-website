@@ -23,43 +23,41 @@
 
         <!-------Add Category form---->
         <form action="" method="POST" enctype="multipart/form-data">
-            <table class="tbl_30">
-                <tr>
-                    <td>Title</td>
-                    <td>
-                        <input type="text" name="title" placeholder="Category Tiltle">
-                    </td>
-                </tr>
 
-                <tr>
-                    <td>Select Image:</td>
-                    <td>
-                        <input type="file" name="image">
-                    </td>
-                </tr>
+            <div class="form-group">
+                <label for="">Title</label>
+                <input type="text" name="title" placeholder="Category Tiltle">
+            </div>
 
-                <tr>
-                    <td>Featured</td>
-                    <td>
-                        <input type="radio" name="featured" value="Yes">Yes
-                        <input type="radio" name="featured" value="No"> No
-                    </td>
-                </tr>
 
-                <tr>
-                    <td>Active</td>
-                    <td>
-                        <input type="radio" name="active" value="Yes">Yes
-                        <input type="radio" name="active" value="No"> No
-                    </td>
-                </tr>
+            <div class="form-group">
+                <label for="">Select Image</label>
+                <input type="file" name="image">
+            </div>
 
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submit" value="Add category" class="btn-secondary">
-                    </td>
-                </tr>
-            </table>
+
+            <div class="form-group">
+                <label for="">Featured</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="featured" value="Yes">Yes</label>
+                    <label><input type="radio" name="featured" value="No">No</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Active</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="active" value="Yes">Yes</label>
+                    <label><input type="radio" name="active" value="No">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="submit" value="Add category" class="btn-secondary">
+            </div>
+
+
         </form>
         <br /><br />
         <?php
