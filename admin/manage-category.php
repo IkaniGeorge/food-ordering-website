@@ -10,10 +10,21 @@ include 'partials/menu.php'
     <!---- Button to add category--->
     <br /><br />
 
-    <?php if (isset($_SESSION['added']))
+    <?php 
+    if (isset($_SESSION['added']))
 
       echo $_SESSION['added'];
     unset($_SESSION['added']);
+
+    if (isset($_SESSION['remove']))
+
+      echo $_SESSION['remove'];
+    unset($_SESSION['remove']);
+
+    if (isset($_SESSION['delete']))
+
+      echo $_SESSION['delete'];
+    unset($_SESSION['delete']);
 
     ?>
     <br /><br />
@@ -63,8 +74,8 @@ include 'partials/menu.php'
               <td><?= $active ?></td>
 
               <td class="actions">
-                  <a class="btn-secondary" href="">Update Category</a>
-                  <a class="btn-danger" href="">Delete Category</a>
+                  <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-category.php?id<?= $id ?>">Update Category</a>
+                  <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $id ?>&image_name=<?= $image_name ?>">Delete Category</a>
               </td>
             </tr>
 
