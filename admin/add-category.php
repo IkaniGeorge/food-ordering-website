@@ -4,7 +4,7 @@
 <div class="main-content">
     <div class="wrapper">
         <h1>Add Category</h1>
-        <br /><br />
+        <br />
 
         <?php
 
@@ -24,19 +24,19 @@
         <!-------Add Category form---->
         <form action="" method="POST" enctype="multipart/form-data">
 
-            <div class="form-group">
+            <div class="form-groupp">
                 <label for="">Title</label>
                 <input type="text" name="title" placeholder="Category Tiltle">
             </div>
 
 
-            <div class="form-group">
+            <div class="form-groupp">
                 <label for="">Select Image</label>
                 <input type="file" name="image">
             </div>
 
 
-            <div class="form-group">
+            <div class="form-groupp">
                 <label for="">Featured</label>
                 <div class="radio-group">
                     <label><input type="radio" name="featured" value="Yes">Yes</label>
@@ -45,7 +45,7 @@
             </div>
 
 
-            <div class="form-group">
+            <div class="form-groupp">
                 <label for="">Active</label>
                 <div class="radio-group">
                     <label><input type="radio" name="active" value="Yes">Yes</label>
@@ -53,7 +53,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-groupp">
                 <input type="submit" name="submit" value="Add category" class="btn-secondary">
             </div>
 
@@ -88,28 +88,34 @@
                 //To upload image we need image name, source path and destination path
                 $image_name = $_FILES['image']['name'];
 
-                //Auto renaming image to avoid naming conflict
-                //Getting image extension like jpg, jpeg, png, heic
-                $extention = end(explode('.', $image_name));
-
-                //Rename the image
-                $image_name = "Food_Category_" . rand(000, 999) . '.' . $extention;
-
-                $source_path = $_FILES['image']['tmp_name'];
-                $destination_path = "../images/category/" . $image_name;
+                //Upload the image only if image is selected
+                if ($image_name != "") {
 
 
-                $upload = move_uploaded_file($source_path, $destination_path);
 
-                //check whether the image is uploaded or not
-                //And if the image is not uploaded then we will stop the process
-                //and redirect with error message
-                if ($upload == false) {
+                    //Auto renaming image to avoid naming conflict
+                    //Getting image extension like jpg, jpeg, png, heic
+                    $extention = end(explode('.', $image_name));
 
-                    //Finally upload the image
-                    $_SESSION['upload'] = "<div class='alert-message error'>Failed to Upload Image</div>";
-                    header('location:' . ROOT_URL . 'admin/add-category.php');
-                    die();
+                    //Rename the image
+                    $image_name = "Food_Category_" . rand(000, 999) . '.' . $extention;
+
+                    $source_path = $_FILES['image']['tmp_name'];
+                    $destination_path = "../images/category/" . $image_name;
+
+
+                    $upload = move_uploaded_file($source_path, $destination_path);
+
+                    //check whether the image is uploaded or not
+                    //And if the image is not uploaded then we will stop the process
+                    //and redirect with error message
+                    if ($upload == false) {
+
+                        //Finally upload the image
+                        $_SESSION['upload'] = "<div class='alert-message error'>Failed to Upload Image</div>";
+                        header('location:' . ROOT_URL . 'admin/add-category.php');
+                        die();
+                    }
                 }
             } else {
                 //dont upload image and set the image_name value as blank

@@ -144,6 +144,7 @@ table tr th {
  .alert-message.error{
       color: var(--color-red);
        background-color: rgb(244, 43, 8);
+       color: white;
       
  }
      
@@ -237,6 +238,10 @@ table tr td{
       margin-bottom: 18px;
     }
 
+    .form-groupp {
+      margin-bottom: 18px;
+    }
+
     .form-group label {
       display: block;
       margin-bottom: 6px;
@@ -244,8 +249,24 @@ table tr td{
       color: #555;
     }
 
+    .form-groupp label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
     .form-group input {
-      width: 98%;
+      width: 95%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-groupp input {
+      width: 50%;
       padding: 12px 14px;
       border-radius: 8px;
       border: 1px solid #ccc;
@@ -254,6 +275,12 @@ table tr td{
     }
 
     .form-group input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    }
+
+    .form-groupp input:focus {
       outline: none;
       border-color: #667eea;
       box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);

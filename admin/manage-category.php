@@ -10,7 +10,7 @@ include 'partials/menu.php'
     <!---- Button to add category--->
     <br /><br />
 
-    <?php 
+    <?php
     if (isset($_SESSION['added']))
 
       echo $_SESSION['added'];
@@ -25,6 +25,11 @@ include 'partials/menu.php'
 
       echo $_SESSION['delete'];
     unset($_SESSION['delete']);
+
+    if (isset($_SESSION['no-category-found']))
+
+      echo $_SESSION['no-category-found'];
+    unset($_SESSION['no-category-found']);
 
     ?>
     <br /><br />
@@ -52,54 +57,71 @@ include 'partials/menu.php'
 
       //check rows
       $count = mysqli_num_rows($insert_result);
-      //check whether we have data in DB or not
 
-      $sn = 1;
+        //create serial number variable an assign value as 1
+        $sn = 1;
+
+      //check whether we have data in DB or not
       if ($count > 0) {
         //we have data in DB
         //get the data and display
-        while($row = mysqli_fetch_assoc($insert_result)){
+        while ($row = mysqli_fetch_assoc($insert_result)) {
           $id = $row['id'];
           $title = $row['title'];
           $image_name = $row['image_name'];
           $featured = $row['featured'];
           $active = $row['active'];
 
-          ?>
-             <tr>
-               <td><?= $sn++ ?></td>
-               <td><?= $title ?></td>
-              <td><?= $image_name ?></td>
-              <td><?= $featured ?></td>
-              <td><?= $active ?></td>
+      ?>
+          <tr>
+            <td><?= $sn++ ?></td>
+            <td><?= $title ?></td>
+            <td>
 
-              <td class="actions">
-                  <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-category.php?id<?= $id ?>">Update Category</a>
-                  <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $id ?>&image_name=<?= $image_name ?>">Delete Category</a>
-              </td>
-            </tr>
+            <?php 
+                //check if whether image is available
+                if($image_name!=""){
+                  //display image
+                  ?>
+                      <img src="<?= ROOT_URL ?>images/category/<?= $image_name ?>" width="50px">
+                  <?php
+                }else{
+                  echo "<div class='alert-mesaage error'>Image not added</div>";
+                }
 
-          <?php
+               ?>
+
+            </td>
+            <td><?= $featured ?></td>
+            <td><?= $active ?></td>
+
+            <td class="actions">
+              <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-category.php?id=<?= $id ?>">Update Category</a>
+              <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $id ?>&image_name=<?= $image_name ?>">Delete Category</a>
+            </td>
+          </tr>
+
+        <?php
         }
-
-
-      }else{
+      } else {
         //we do not have data
         //we'll display the message inside table
         ?>
 
         <tr>
-          <td colspan=""><div class="alert-message error">No Category Added</div></td>
+          <td colspan="6">
+            <div class="alert-message error">No Category Added</div>
+          </td>
         </tr>
 
-        <?php
+      <?php
 
       }
-        
+
 
       ?>
-       
-          
+
+
     </table>
 
   </div>

@@ -32,7 +32,7 @@ if($image_name !=""){
     //redirect to manage admin page
     header('location:'  . ROOT_URL . 'admin/manage-category.php');
     die();
-
+ 
     }else{
           $_SESSION['delete'] = "<div class='alert-message error'>Fail to delete.</div>";
     //redirect to manage admin page
