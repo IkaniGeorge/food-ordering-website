@@ -31,6 +31,21 @@ include 'partials/menu.php'
       echo $_SESSION['no-category-found'];
     unset($_SESSION['no-category-found']);
 
+    if (isset($_SESSION['update']))
+
+      echo $_SESSION['update'];
+    unset($_SESSION['update']);
+
+    if (isset($_SESSION['upload']))
+
+      echo $_SESSION['upload'];
+    unset($_SESSION['upload']);
+
+    if (isset($_SESSION['failed-removed']))
+
+      echo $_SESSION['failed-removed'];
+    unset($_SESSION['failed-removed']);
+
     ?>
     <br /><br />
 
