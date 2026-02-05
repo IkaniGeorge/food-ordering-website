@@ -49,10 +49,10 @@
                     if ($count > 0) {
 
                         // we have categories.
-                        while ($row = mysqli_fetch_assoc($insert_result)) {
+                        while ($rows = mysqli_fetch_assoc($insert_result)) {
                             // get the data of food categories and display
-                            $id = $row['id'];
-                            $title = $row['title'];
+                            $id = $rows['id'];
+                            $title = $rows['title'];
 
                     ?>
                             <option value="<?= $id ?>"><?= $title ?></option>
