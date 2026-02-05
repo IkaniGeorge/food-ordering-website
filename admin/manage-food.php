@@ -10,16 +10,19 @@
            <!---- Button to add food --->
         <br/><br/>
  
-        <a class="btn-primary" href="">Add Food</a>
+        <a class="btn-primary" href="<?= ROOT_URL ?>admin/add-food.php">Add Food</a>
 
         <br/><br/>
 
         <table class="tbl_full">
           <tr>
             <th>S.N</th>
-            <th>Full name</th>
-            <th>Username</th>
-            <th>Actions</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Featured</th>
+            <th>Active</th>
           </tr>
 
           <tr>
@@ -32,25 +35,6 @@
             </td>
           </tr>
 
-          <tr>
-            <td>2.</td>
-            <td>George_Ikani</td>
-            <td>George Ibembem</td>
-            <td>
-              <a class="btn-secondary" href="">Update Admin</a>
-              <a class="btn-danger" href="">Delete Admin</a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>3.</td>
-            <td>George_Ikani</td>
-            <td>George Ibembem</td>
-            <td>
-              <a class="btn-secondary" href="">Update Admin</a>
-              <a class="btn-danger" href="">Delete Admin</a>
-            </td>
-          </tr>
 
         </table>
     </div>

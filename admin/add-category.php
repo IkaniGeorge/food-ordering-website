@@ -59,7 +59,7 @@
 
 
         </form>
-        <br /><br />
+        
         <?php
         //check if the submit button is active
         if (isset($_POST['submit'])) {

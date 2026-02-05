@@ -79,7 +79,7 @@ include 'partials/menu.php'
       //check whether we have data in DB or not
       if ($count > 0) {
         //we have data in DB
-        //get the data and display
+        //get the data of category and display
         while ($row = mysqli_fetch_assoc($insert_result)) {
           $id = $row['id'];
           $title = $row['title'];
