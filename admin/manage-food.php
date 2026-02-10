@@ -12,9 +12,21 @@ include 'partials/menu.php'
 
     <br /><br />
     <?php
-    if (isset($_SESSION['added']))
-      echo  $_SESSION['added'];
-    unset($_SESSION['added']);
+          if (isset($_SESSION['added']))
+            echo  $_SESSION['added'];
+          unset($_SESSION['added']);
+
+          if (isset($_SESSION['remove']))
+            echo  $_SESSION['remove'];
+          unset($_SESSION['remove']);
+
+          if (isset($_SESSION['delete']))
+            echo  $_SESSION['delete'];
+          unset($_SESSION['delete']);
+
+          if (isset($_SESSION['unathaurize']))
+            echo  $_SESSION['unathaurize'];
+          unset($_SESSION['unathaurize']);
 
     ?>
 
@@ -57,24 +69,25 @@ include 'partials/menu.php'
             <td><?= $sn++ ?></td>
             <td><?= $title ?></td>
             <td><?= $price ?></td>
-            <td>   <?php 
-                //check if whether image is available
-                if($image_name!=""){
-                  //display image
+            <td> <?php
+                  //check if whether image is available
+                  if ($image_name != "") {
+                    //display image
                   ?>
-                      <img src="<?= ROOT_URL ?>images/food/<?= $image_name ?>" width="30px">
-                  <?php
-                }else{
-                  echo "<div class='alert-mesaage error'>Image not added</div>";
-                }
+                <img src="<?= ROOT_URL ?>images/food/<?= $image_name ?>" width="30px">
+              <?php
+                  } else {
+                    echo "<div class='alert-mesaage error'>Image not added</div>";
+                  }
 
-               ?></td>
+              ?>
+            </td>
             <td><?= $featured ?></td>
             <td><?= $active ?></td>
 
             <td class="actions">
-              <a class="btn-secondary" href="">Update Food</a>
-              <a class="btn-danger" href="">Delete Food</a>
+              <a class="btn-secondary" href="<?= ROOT_URL ?>admin/update-food.php?id=<?= $id ?>">Update Food</a>
+              <a class="btn-danger" href="<?= ROOT_URL ?>admin/delete-food.php?id=<?= $id ?>&image_name=<?= $image_name ?>">Delete Food</a>
             </td>
           </tr>
       <?php

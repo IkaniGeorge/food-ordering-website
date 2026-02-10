@@ -26,6 +26,11 @@ include 'partials/menu.php'
       echo $_SESSION['delete'];
     unset($_SESSION['delete']);
 
+    if (isset($_SESSION['unathaurize']))
+
+      echo $_SESSION['unathaurize'];
+    unset($_SESSION['unathaurize']);
+
     if (isset($_SESSION['no-category-found']))
 
       echo $_SESSION['no-category-found'];
