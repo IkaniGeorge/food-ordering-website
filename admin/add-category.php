@@ -98,7 +98,7 @@
                     $extention = end(explode('.', $image_name));
 
                     //Rename the image
-                    $image_name = "Food_Category_" . rand(000, 999) . '.' . $extention;
+                    $image_name = "Food_Category" . rand(0000, 9999) . '.' . $extention;
 
                     $source_path = $_FILES['image']['tmp_name'];
                     $destination_path = "../images/category/" . $image_name;
@@ -109,9 +109,9 @@
                     //check whether the image is uploaded or not
                     //And if the image is not uploaded then we will stop the process
                     //and redirect with error message
+                    //Finally upload the image
                     if ($upload == false) {
 
-                        //Finally upload the image
                         $_SESSION['upload'] = "<div class='alert-message error'>Failed to Upload Image</div>";
                         header('location:' . ROOT_URL . 'admin/add-category.php');
                         die();

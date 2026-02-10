@@ -1,43 +1,63 @@
-<?php 
-    include 'partials/menu.php'
+<?php
+include 'partials/menu.php'
 ?>
 
 <!---- Main content section starts --->
-  <div class="main-content">
-    <div class="wrapper">
-        <h1>Manage Food</h1>
+<div class="main-content">
+  <div class="wrapper">
+    <h1>Manage Food</h1>
+    <br/><br/>
 
-           <!---- Button to add food --->
-        <br/><br/>
- 
-        <a class="btn-primary" href="<?= ROOT_URL ?>admin/add-food.php">Add Food</a>
+     <a class="btn-primary" href="<?= ROOT_URL ?>admin/add-food.php">Add Food</a>
 
-        <br/><br/>
+    <br/><br/>
+    <?php
+       if (isset($_SESSION['added']))
+            echo  $_SESSION['added'];
+            unset($_SESSION['added']);
 
-        <table class="tbl_full">
-          <tr>
-            <th>S.N</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Image</th>
-            <th>Category</th>
-            <th>Featured</th>
-            <th>Active</th>
-          </tr>
+    ?>
 
-          <tr>
-            <td>1.</td>
-            <td>George_Ikani</td>
-            <td>George Ibembem</td>
-            <td>
-              <a class="btn-secondary" href="">Update Admin</a>
-              <a class="btn-danger" href="">Delete Admin</a>
-            </td>
-          </tr>
+    <table class="tbl_full">
+      <tr>
+        <th>S.N</th>
+        <th>Full name</th>
+        <th>Username</th>
+        <th>Actions</th>
+      </tr>
 
+      <tr>
+        <td>1.</td>
+        <td>George_Ikani</td>
+        <td>George Ibembem</td>
+        <td>
+          <a class="btn-secondary" href="">Update Admin</a>
+          <a class="btn-danger" href="">Delete Admin</a>
+        </td>
+      </tr>
 
-        </table>
-    </div>
+      <tr>
+        <td>2.</td>
+        <td>George_Ikani</td>
+        <td>George Ibembem</td>
+        <td>
+          <a class="btn-secondary" href="">Update Admin</a>
+          <a class="btn-danger" href="">Delete Admin</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>3.</td>
+        <td>George_Ikani</td>
+        <td>George Ibembem</td>
+        <td>
+          <a class="btn-secondary" href="">Update Admin</a>
+          <a class="btn-danger" href="">Delete Admin</a>
+        </td>
+      </tr>
+
+    </table>
   </div>
-   <!---- Main content section ends --->
+</div>
+<!---- Main content section ends --->
 <?php include 'partials/footer.php' ?>
