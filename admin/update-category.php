@@ -77,12 +77,19 @@ if (isset($_GET['id'])) {
             <div class="form-groupp">
                 <label for="">Featured</label>
                 <div class="radio-group">
-                    <label><input <?php if ($featured == "Yes") {
-                                        echo "checked";
-                                    } ?> type="radio" name="featured" value="Yes">Yes</label>
-                    <label><input <?php if ($featured == "No") {
-                                        echo "checked";
-                                    } ?> type="radio" name="featured" value="No">No</label>
+                    <label><input
+                            <?php if ($featured == "Yes") {
+                                echo "checked";
+                            }
+                            ?>
+                            type="radio" name="featured" value="Yes">Yes</label>
+                    <label><input
+                            <?php if ($featured == "No") {
+                                echo "checked";
+                            }
+                            ?>
+
+                            type="radio" name="featured" value="No">No</label>
                 </div>
             </div>
 
@@ -158,7 +165,7 @@ if (isset($_GET['id'])) {
 
                     //B. Remove the current image if available
                     if ($current_image != "") {
-                        $remove_path = "../images/category/".$current_image;
+                        $remove_path = "../images/category/" . $current_image;
                         $remove = unlink($remove_path);
 
                         //check if the image is removed or not

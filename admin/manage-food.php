@@ -28,6 +28,14 @@ include 'partials/menu.php'
             echo  $_SESSION['unathaurize'];
           unset($_SESSION['unathaurize']);
 
+          if (isset($_SESSION['failed-remove']))
+            echo  $_SESSION['failed-remove'];
+          unset($_SESSION['failed-remove']);
+
+          if (isset($_SESSION['update']))
+            echo  $_SESSION['update'];
+          unset($_SESSION['update']);
+
     ?>
 
     <table class="tbl_full">
