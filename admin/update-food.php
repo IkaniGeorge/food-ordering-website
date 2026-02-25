@@ -226,7 +226,7 @@ if (isset($_GET['id'])) {
             //3. Updating the DB
             $update_sql1 = "UPDATE tbl_food SET title='$title', 
             description='$description', price='$price', 
-            image_name='$image_name', category_id='$category',
+            image_name='$image_name', category_id='$category ',
             featured='$featured', active='$active' WHERE id='$id'";
 
             //execute the query
