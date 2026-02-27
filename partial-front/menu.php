@@ -25,16 +25,16 @@
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="<?= ROOT_URL ?>index.php">Home</a>
                     </li>
                     <li>
-                        <a href="categories.php">Categories</a>
+                        <a href="<?= ROOT_URL ?>categories.php">Categories</a>
                     </li>
                     <li>
-                        <a href="foods.php">Foods</a>
+                        <a href="<?= ROOT_URL ?>foods.php">Foods</a>
                     </li>
                     <li>
-                        <a href="contact.php">Contact</a>
+                        <a href="<?= ROOT_URL ?>contact.php">Contact</a>
                     </li>
                 </ul>
             </div>

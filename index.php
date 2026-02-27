@@ -4,7 +4,7 @@
 <section class="food-search text-center">
     <div class="container">
 
-        <form action="food-search.html" method="POST">
+        <form action="<?= ROOT_URL ?>food-search.php" method="POST">
             <input type="search" name="search" placeholder="Search for Food.." required>
             <input type="submit" name="submit" value="Search" class="btn btn-primary">
         </form>
@@ -39,7 +39,7 @@
                 <a href="category-foods.php">
                     <div class="box-3 float-container">
                         <?php
-                        //check if email is available or not
+                        //check if image is available or not
                         if ($image_name == "") {
                             //display image
                             echo "<div class'alert-message error'>Image not available</div>";
@@ -60,7 +60,7 @@
             }
         } else {
 
-            echo "<div class'alert-message error'>Category not Added.</div>";
+            echo "<div class'alert-message error'>Food not Added.</div>";
         }
 
         ?>
@@ -76,7 +76,7 @@
         <h2 class="text-center">Food Menu</h2>
 
         <?php
-        $sql1 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 6";
+        $sql1 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 4";
         $res1 = mysqli_query($connection, $sql1);
 
         $count1 = mysqli_num_rows($res1);
@@ -86,8 +86,8 @@
             while ($row = mysqli_fetch_assoc($res1)) {
                 $id = $row['id'];
                 $title = $row['title'];
-                $price = $row['price'];
                 $description = $row['description'];
+                $price = $row['price'];
                 $image_name = $row['image_name'];
 
                  ?>
@@ -101,7 +101,7 @@
                             echo "<div class'alert-message error'>Image not available</div>";
                         } else {
                         ?>
-                            <img src="<?= ROOT_URL ?>images/food/<?= $image_name ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                            <img src="<?= ROOT_URL?>images/food/<?= $image_name ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
                         <?php
                         }
                         ?>
