@@ -1,6 +1,8 @@
 <?php include 'partial-front/menu.php'; ?>
 
         <?php 
+
+            //DISPLAYING FOOD TITLE WHEN FOOD-CATEGORY IS CLICKED
             if(isset($_GET['category_id'])){
 
                 //Category id is set and get the ID
