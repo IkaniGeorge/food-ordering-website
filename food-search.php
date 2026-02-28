@@ -5,7 +5,7 @@
     <div class="container">
 
         <?php 
-             $search = $_POST['search'];
+             $search = $_POST['search'] ;
         ?>
      <h2>Foods on Your Search <a href="#" class="text-red"><?= $search ?></a></h2>
 

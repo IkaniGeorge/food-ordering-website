@@ -1,10 +1,31 @@
 <?php include 'partial-front/menu.php'; ?>
 
+        <?php 
+            if(isset($_GET['category_id'])){
+
+                //Category id is set and get the ID
+                $category_id = $_GET['category_id'];
+                //Get the category title based on CategoryID
+                $sql = "SELECT title FROM tbl_category WHERE id=$category_id";
+                //execute the query
+                $res = mysqli_query($connection, $sql);
+                //get the value from database
+                $row = mysqli_fetch_assoc($res);
+
+                $title = $row['title'];
+
+            }else{
+
+                header('location:' . ROOT_URL);
+            }
+        
+        ?>
+
     <!-- fOOD Search Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
 
-            <h2>Fodds on <a href="" class="text-white">"Category"</a></h2>
+            <h2>Fodds on <a href="" class="text-white"><?= $title ?></a></h2>
 
         </div>
 
@@ -14,6 +35,8 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Food Menu</h2>
+
+             
 
             <div class="food-menu-box">
                 <div class="food-menu-img">

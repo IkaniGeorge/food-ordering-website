@@ -18,6 +18,7 @@
         <h2 class="text-center">Explore Foods</h2>
 
         <?php
+        //Displaying food from DB on the webpage
         //create sql query to display categories from DB
         $sql = "SELECT * FROM tbl_category WHERE active='Yes' AND featured='Yes' LIMIT 3";
 
@@ -36,7 +37,8 @@
                 $image_name = $row['image_name'];
         ?>
 
-                <a href="category-foods.php">
+            <!-------Displaying the food base on category selected---->
+                <a href="<?= ROOT_URL ?>category-foods.php?category_id=<?= $id ?>">
                     <div class="box-3 float-container">
                         <?php
                         //check if image is available or not
