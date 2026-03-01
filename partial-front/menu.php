@@ -11,7 +11,7 @@
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
+ 
 <body>
     <!-- Navbar Section Starts Here -->
     <section class="navbar">

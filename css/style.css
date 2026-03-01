@@ -137,6 +137,24 @@ fieldset{
     margin: 2%;
 }
 
+.alert-message{
+      padding: 0.8rem 1.4rem;
+      border-radius: var(--card-border-radius-2 );
+  }
+
+ .alert-message.error{
+      color: var(--color-red);
+       background-color: rgb(244, 43, 8);
+       color: white;
+      
+ }
+     
+ .alert-message.success{
+      color: var(--color-white);
+      background-color: rgb(10, 58, 10);
+ }
+
+
 
 /* CSS for Food Menu */
 .food-menu{
